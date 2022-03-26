@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import './second.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,8 +38,8 @@ class MainPage extends StatelessWidget {
             right: -getBiglDiameter(context) / 2,
             bottom: -getBiglDiameter(context) / 2,
             child: Container(
-              width: getSmallDiameter(context)+ getSmallDiameter(context),
-              height: getSmallDiameter(context)+ getSmallDiameter(context),
+              width: getSmallDiameter(context) + getSmallDiameter(context),
+              height: getSmallDiameter(context) + getSmallDiameter(context),
               decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: LinearGradient(
@@ -60,8 +61,8 @@ class MainPage extends StatelessWidget {
                       color: Colors.white),
                 ),
               ),
-              width: getBiglDiameter(context)+100,
-              height: getBiglDiameter(context)+150,
+              width: getBiglDiameter(context) + 100,
+              height: getBiglDiameter(context) + 150,
               decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: LinearGradient(colors: [
@@ -71,13 +72,14 @@ class MainPage extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: -getBiglDiameter(context) -10000,
+            right: -getBiglDiameter(context) - 10000,
             bottom: -getBiglDiameter(context) / 2,
             child: Container(
-              width: getBiglDiameter(context)+300,
-              height: getBiglDiameter(context)+300,
+              width: getBiglDiameter(context) + 300,
+              height: getBiglDiameter(context) + 300,
               decoration: const BoxDecoration(
-                  shape: BoxShape.circle, color: Color.fromARGB(255, 242, 24, 133)),
+                  shape: BoxShape.circle,
+                  color: Color.fromARGB(255, 242, 24, 133)),
             ),
           ),
           Align(
@@ -146,10 +148,13 @@ class MainPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             color: Colors.transparent,
                             child: InkWell(
-                              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const SecondPage())),
+                              // onTap: () => Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) =>
+                              //             const SecondPage())),
                               borderRadius: BorderRadius.circular(20),
                               splashColor: Colors.black,
-                              
                               child: const Center(
                                 child: Text(
                                   "SIGN IN",
@@ -173,7 +178,7 @@ class MainPage extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
+                  children: <Widget>[
                     Text(
                       "DON'T HAVE AN ACCOUNT ? ",
                       style: TextStyle(
@@ -181,12 +186,18 @@ class MainPage extends StatelessWidget {
                           color: Color.fromARGB(255, 65, 211, 255),
                           fontWeight: FontWeight.w500),
                     ),
-                    Text(
-                      " SIGN UP",
-                      style: TextStyle(
-                          fontSize: 11,
-                          color: Color.fromARGB(255, 72, 255, 148),
-                          fontWeight: FontWeight.w700),
+                    TextButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SecondPage())),
+                      child: Text(
+                        " SIGN UP",
+                        style: TextStyle(
+                            fontSize: 11,
+                            color: Color.fromARGB(255, 72, 255, 148),
+                            fontWeight: FontWeight.w700),
+                      ),
                     )
                   ],
                 )
@@ -198,8 +209,6 @@ class MainPage extends StatelessWidget {
     );
   }
 }
-
-
 
 class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
@@ -219,8 +228,8 @@ class SecondPage extends StatelessWidget {
             right: -getBiglDiameter(context) / 2,
             bottom: -getBiglDiameter(context) / 2,
             child: Container(
-              width: getSmallDiameter(context)+ getSmallDiameter(context),
-              height: getSmallDiameter(context)+ getSmallDiameter(context),
+              width: getSmallDiameter(context) + getSmallDiameter(context),
+              height: getSmallDiameter(context) + getSmallDiameter(context),
               decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: LinearGradient(
@@ -242,8 +251,8 @@ class SecondPage extends StatelessWidget {
                       color: Colors.white),
                 ),
               ),
-              width: getBiglDiameter(context)+100,
-              height: getBiglDiameter(context)+150,
+              width: getBiglDiameter(context) + 100,
+              height: getBiglDiameter(context) + 150,
               decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: LinearGradient(colors: [
@@ -253,13 +262,14 @@ class SecondPage extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: -getBiglDiameter(context) -10000,
+            right: -getBiglDiameter(context) - 10000,
             bottom: -getBiglDiameter(context) / 2,
             child: Container(
-              width: getBiglDiameter(context)+300,
-              height: getBiglDiameter(context)+300,
+              width: getBiglDiameter(context) + 300,
+              height: getBiglDiameter(context) + 300,
               decoration: const BoxDecoration(
-                  shape: BoxShape.circle, color: Color.fromARGB(255, 242, 24, 133)),
+                  shape: BoxShape.circle,
+                  color: Color.fromARGB(255, 242, 24, 133)),
             ),
           ),
           Align(
@@ -288,7 +298,7 @@ class SecondPage extends StatelessWidget {
                             enabledBorder: InputBorder.none,
                             labelStyle: const TextStyle(color: Colors.grey)),
                       ),
-                        TextField(
+                      TextField(
                         decoration: InputDecoration(
                             icon: const Icon(
                               Icons.email,
@@ -341,13 +351,12 @@ class SecondPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             color: Colors.transparent,
                             child: InkWell(
-                              onTap: () => Navigator.pop(context),
+                              // onTap: () => Navigator.pop(context),
                               borderRadius: BorderRadius.circular(20),
                               splashColor: Colors.black,
-                              
                               child: const Center(
                                 child: Text(
-                                  "SIGN IN",
+                                  "SIGN UP",
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w700),
@@ -368,20 +377,23 @@ class SecondPage extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
+                  children: <Widget>[
                     Text(
-                      "DON'T HAVE AN ACCOUNT ? ",
+                      "HAVE AN ACCOUNT ? ",
                       style: TextStyle(
                           fontSize: 11,
                           color: Color.fromARGB(255, 65, 211, 255),
                           fontWeight: FontWeight.w500),
                     ),
-                    Text(
-                      " SIGN UP",
-                      style: TextStyle(
-                          fontSize: 11,
-                          color: Color.fromARGB(255, 72, 255, 148),
-                          fontWeight: FontWeight.w700),
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text(
+                        " SIGN IN",
+                        style: TextStyle(
+                            fontSize: 11,
+                            color: Color.fromARGB(255, 72, 255, 148),
+                            fontWeight: FontWeight.w700),
+                      ),
                     )
                   ],
                 )
