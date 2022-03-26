@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -11,10 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown
-    ]);
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MainPage(),
@@ -37,50 +34,50 @@ class MainPage extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Positioned(
-            right: -getSmallDiameter(context) / 3,
-            top: -getSmallDiameter(context) / 3,
+            right: -getBiglDiameter(context) / 2,
+            bottom: -getBiglDiameter(context) / 2,
             child: Container(
-              width: getSmallDiameter(context),
-              height: getSmallDiameter(context),
+              width: getSmallDiameter(context)+ getSmallDiameter(context),
+              height: getSmallDiameter(context)+ getSmallDiameter(context),
               decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: LinearGradient(
-                      colors: [Color(0xFFB226B2), Color(0xFFFF6DA7)],
+                      colors: [Colors.blue, Colors.green],
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter)),
             ),
           ),
           Positioned(
             left: -getBiglDiameter(context) / 4,
-            top: -getBiglDiameter(context) / 4,
+            top: -getBiglDiameter(context) / 2.5,
             child: Container(
               child: const Center(
                 child: Text(
-                  "dribblee",
+                  "FileX",
                   style: TextStyle(
                       fontFamily: "Pacifico",
-                      fontSize: 40,
+                      fontSize: 70,
                       color: Colors.white),
                 ),
               ),
-              width: getBiglDiameter(context),
-              height: getBiglDiameter(context),
+              width: getBiglDiameter(context)+100,
+              height: getBiglDiameter(context)+150,
               decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  gradient: LinearGradient(
-                      colors: [Color(0xFFB226B2), Color(0xFFFF4891)],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter)),
+                  gradient: LinearGradient(colors: [
+                    Color.fromARGB(255, 0, 0, 0),
+                    Color.fromARGB(255, 0, 0, 0)
+                  ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
             ),
           ),
           Positioned(
-            right: -getBiglDiameter(context) / 2,
+            right: -getBiglDiameter(context) -10000,
             bottom: -getBiglDiameter(context) / 2,
             child: Container(
-              width: getBiglDiameter(context),
-              height: getBiglDiameter(context),
+              width: getBiglDiameter(context)+300,
+              height: getBiglDiameter(context)+300,
               decoration: const BoxDecoration(
-                  shape: BoxShape.circle, color: Color(0xFFF3E9EE)),
+                  shape: BoxShape.circle, color: Color.fromARGB(255, 242, 24, 133)),
             ),
           ),
           Align(
@@ -95,16 +92,16 @@ class MainPage extends StatelessWidget {
                   margin: const EdgeInsets.fromLTRB(20, 300, 20, 10),
                   padding: const EdgeInsets.fromLTRB(10, 0, 10, 25),
                   child: Column(
-                    children:  <Widget>[
-                       TextField(
+                    children: <Widget>[
+                      TextField(
                         decoration: InputDecoration(
                             icon: const Icon(
                               Icons.email,
-                              color: Color(0xFFFF4891),
+                              color: Colors.blue,
                             ),
                             focusedBorder: UnderlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: Colors.grey.shade100 )),
+                                    BorderSide(color: Colors.grey.shade100)),
                             labelText: "Email",
                             enabledBorder: InputBorder.none,
                             labelStyle: const TextStyle(color: Colors.grey)),
@@ -114,7 +111,7 @@ class MainPage extends StatelessWidget {
                         decoration: InputDecoration(
                             icon: const Icon(
                               Icons.vpn_key,
-                              color: Color(0xFFFF4891),
+                              color: Colors.green,
                             ),
                             focusedBorder: UnderlineInputBorder(
                                 borderSide:
@@ -122,7 +119,6 @@ class MainPage extends StatelessWidget {
                             labelText: "Password",
                             enabledBorder: InputBorder.none,
                             labelStyle: const TextStyle(color: Colors.grey)),
-                            
                       )
                     ],
                   ),
@@ -133,16 +129,17 @@ class MainPage extends StatelessWidget {
                         margin: const EdgeInsets.fromLTRB(0, 0, 20, 10),
                         child: const Text(
                           "FORGOT PASSWORD?",
-                          style:
-                              TextStyle(color: Color(0xFFFF4891), fontSize: 11),
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 0, 0),
+                              fontSize: 11),
                         ))),
                 Container(
                   margin: const EdgeInsets.fromLTRB(20, 0, 20, 30),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.5,
+                        width: MediaQuery.of(context).size.width / 3,
                         height: 40,
                         child: Container(
                           child: Material(
@@ -156,7 +153,7 @@ class MainPage extends StatelessWidget {
                                 child: Text(
                                   "SIGN IN",
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontWeight: FontWeight.w700),
                                 ),
                               ),
@@ -165,28 +162,9 @@ class MainPage extends StatelessWidget {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               gradient: const LinearGradient(
-                                  colors: [
-                                    Color(0xFFB226B2),
-                                    Color(0xFFFF4891)
-                                  ],
+                                  colors: [Colors.white, Colors.white],
                                   begin: Alignment.topCenter,
                                   end: Alignment.bottomCenter)),
-                        ),
-                      ),
-                      FloatingActionButton(
-                        onPressed: () {},
-                        mini: true,
-                        elevation: 0,
-                        child: const Image(
-                          image: AssetImage("assets/facebook2.png"),
-                        ),
-                      ),
-                      FloatingActionButton(
-                        onPressed: () {},
-                        mini: true,
-                        elevation: 0,
-                        child: const Image(
-                          image: AssetImage("assets/twitter.png"),
                         ),
                       ),
                     ],
@@ -199,14 +177,14 @@ class MainPage extends StatelessWidget {
                       "DON'T HAVE AN ACCOUNT ? ",
                       style: TextStyle(
                           fontSize: 11,
-                          color: Colors.grey,
+                          color: Color.fromARGB(255, 65, 211, 255),
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
                       " SIGN UP",
                       style: TextStyle(
                           fontSize: 11,
-                          color: Color(0xFFFF4891),
+                          color: Color.fromARGB(255, 72, 255, 148),
                           fontWeight: FontWeight.w700),
                     )
                   ],
