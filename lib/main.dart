@@ -356,7 +356,7 @@ class SecondPage extends StatelessWidget {
                               splashColor: Colors.black,
                               child: const Center(
                                 child: Text(
-                                  "SIGN UP",
+                                  "SIGN UP", 
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w700),
